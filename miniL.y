@@ -77,11 +77,11 @@ statements: statement SEMICOLON {printf("statements -> statement SEMICOLON\n");}
             ;
 
 statement: var ASSIGN expression {printf("statement -> var Assign expression\n");}
-       | IF bool_expr THEN statements ENDIF {printf("statement -> IF bool_expr THEN statements ENDIF\n");}
-        | IF bool_expr THEN statements ELSE statements ENDIF {printf("statement -> IF bool_expr THEN statements ELSE statements ENDIF\n");}
-        | WHILE bool_expr BEGINLOOP statements ENDLOOP {printf("statement -> WHILE bool_expr BEGINLOOP statements ENDLOOP\n");}
-        | DO BEGINLOOP statements ENDLOOP WHILE bool_expr {printf("statement -> DO BEGINLOOP statements ENDLOOP\n");}
-        | FOR variables ASSIGN NUMBER SEMICOLON bool_expr SEMICOLON variables ASSIGN expression BEGINLOOP statements ENDLOOP {printf("statement -> FOR variables ASSIGN %d SEMICOLON bool_expr SEMICOLON variables ASSIGN expression BEGINLOOP statements ENDLOOP\n");}
+       | IF bool_expression THEN statements ENDIF {printf("statement -> IF bool_expression THEN statements ENDIF\n");}
+        | IF bool_expression THEN statements ELSE statements ENDIF {printf("statement -> IF bool_expression THEN statements ELSE statements ENDIF\n");}
+        | WHILE bool_expression BEGINLOOP statements ENDLOOP {printf("statement -> WHILE bool_expression BEGINLOOP statements ENDLOOP\n");}
+        | DO BEGINLOOP statements ENDLOOP WHILE bool_expression {printf("statement -> DO BEGINLOOP statements ENDLOOP\n");}
+        | FOR variables ASSIGN NUMBER SEMICOLON bool_expression SEMICOLON variables ASSIGN expression BEGINLOOP statements ENDLOOP {printf("statement -> FOR variables ASSIGN %d SEMICOLON bool_expression SEMICOLON variables ASSIGN expression BEGINLOOP statements ENDLOOP\n");}
         | READ variables {printf("statement -> READ variables\n");}
         | WRITE variables {printf("statement -> WRITE variables\n");}
         | CONTINUE  {printf("statement -> CONTINUE\n");}
@@ -106,8 +106,8 @@ relation_expr: expression comp expression {printf("relation_expr -> expression c
       		 | NOT TRUE {printf("relation_expr -> NOT TRUE\n");}
       		 | FALSE {printf("relation_expr -> FALSE\n");}
 	      	 | NOT FALSE {printf("relation_expr -> NOT FALSE\n");}
-	      	 | L_PAREN bool_expr R_PAREN {printf("relation_expr -> L_PAREN bool_expr R_PAREN\n");}
-		       | NOT L_PAREN bool_expr R_PAREN {printf("relation_expr -> NOT L_PAREN bool_expr R_PAREN\n");}
+	      	 | L_PAREN bool_expression R_PAREN {printf("relation_expr -> L_PAREN bool_expression R_PAREN\n");}
+		       | NOT L_PAREN bool_expression R_PAREN {printf("relation_expr -> NOT L_PAREN bool_expression R_PAREN\n");}
 ;  
 
 comp: EQ {printf("comp -> EQ\n");}
