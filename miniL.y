@@ -60,7 +60,7 @@ function:    FUNCTION IDENT SEMICOLON BEGIN_PARAMS declarations END_PARAMS BEGIN
 
 
 declarations: /*epsilon*/ {printf("declarations -> epsilon\n");}
-            | declaration SEMICOLON declarations {printf("declarations -> declaration SEMICOLON declarations\n);}
+            | declaration SEMICOLON declarations {printf("declarations -> declaration SEMICOLON declarations\n");}
             ;
 
 declaration: identifiers COLON INTEGER {printf("declaration -> identifiers COLON INTEGER\n");}
